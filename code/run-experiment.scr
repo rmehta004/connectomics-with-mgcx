@@ -1,0 +1,21 @@
+#!/bin/bash -l
+
+#SBATCH
+#SBATCH --job-name=marcc_test
+#SBATCH --time=1-0:0:0
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=24
+#SBATCH --partition=shared
+#SBATCH --mail-type=end
+#SBATCH --mail-user=rmehta13@jhu.edu
+
+## load python on the system
+module load python
+
+## script.py would be your script and it would run from command line the
+## same way on your computer
+## python marcc_test.py
+
+#### or we could also do an array job
+#### sbatch --array=1-5%5 marcc_test.scr
+python marcc_test.py $SLURM_ARRAY_TASK_ID
