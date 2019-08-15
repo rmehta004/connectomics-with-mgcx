@@ -18,7 +18,7 @@ def worker(s):
     M = 20
 
     # Load image - individual 100307.
-    img = nib.load("rfMRI_REST1_LR_Atlas_hp2000_clean_filt_sm6.Schaefer400_7Network.ptseries.nii")
+    img = nib.load("../data/rfMRI_REST1_LR_Atlas_hp2000_clean_filt_sm6.Schaefer400_7Network.ptseries.nii")
     data = np.array(img.get_fdata())
     n = data.shape[0]
 
