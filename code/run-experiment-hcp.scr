@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
 #SBATCH
-#SBATCH --job-name=marcc_test
+#SBATCH --job-name=run-experiment-hcp
 #SBATCH --time=1-0:0:0
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=24
@@ -14,8 +14,8 @@ module load python
 
 ## script.py would be your script and it would run from command line the
 ## same way on your computer
-## python marcc_test.py
+## python run_mgcx.py
 
 #### or we could also do an array job
-#### sbatch --array=1-5%5 marcc_test.scr
-python marcc_test.py $SLURM_ARRAY_TASK_ID
+#### sbatch --array=1-7%7 run-experiment-hcp.scr
+python run-mgcx-hcp.py $SLURM_ARRAY_TASK_ID
